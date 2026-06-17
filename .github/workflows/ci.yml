@@ -1,4 +1,32 @@
-name: ci.yml
+name: ci
+
 on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
 
 jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar ESLint
+        run: npm run lint
+
+      - name: Verificar formatação com Prettier
+        run: npm run format:check

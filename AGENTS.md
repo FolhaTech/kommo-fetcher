@@ -89,7 +89,7 @@ src/
                           # helpers. Not registered anywhere.
     kommo.types.ts        # Kommo API DTOs (KommoAccount,
                           # KommoContact, KommoPaginatedResponse, …).
-    kommo.modulo.ts       # empty file — the Kommo module is not
+    kommo.module.ts       # empty file — the Kommo module is not
                           # implemented.
   candidates/             # empty — planned.
   db/                     # empty — Supabase persistence not started.
